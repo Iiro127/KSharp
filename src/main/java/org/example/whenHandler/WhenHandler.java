@@ -11,12 +11,12 @@ public class WhenHandler {
     public static final Map<String, String> conditionStr = new HashMap<>();
     public static final Map<String, Integer> conditionInt = new HashMap<>();
     private static final InputReader inputReader = new InputReader();
-    private static final WhenResource whenHandler = new WhenResource();
+    private static final WhenResource whenResource = new WhenResource();
     private static String line;
 
     public void handleWhen(String input){
         line = input;
-        String condition = whenHandler.parseCondition(line);
+        String condition = whenResource.parseCondition(line);
         handleCondition(condition);
     }
     private void handleCondition(String condition){
@@ -37,14 +37,14 @@ public class WhenHandler {
                 int expected = conditionInt.get(var);
 
                 if (stored == expected){
-                    inputReader.readInput(whenHandler.parseBody(line));
+                    inputReader.readInput(whenResource.parseBody(line));
                 }
             } else if (strings.containsKey(var)) {
                 String stored = strings.get(var);
                 String expected = conditionStr.get(var);
 
                 if (stored.equals(expected)){
-                    inputReader.readInput(whenHandler.parseBody(line));
+                    inputReader.readInput(whenResource.parseBody(line));
                 }
             } else {
                 System.out.println("false");
