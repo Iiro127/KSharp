@@ -2,7 +2,6 @@
 
 A num-variable can be initialized using the "num"-keyword. Nums can then be used to perform addition and subtraction.
 
-**Example:**
 ```text
 >>> num x = 2
 >>> num y = 3
@@ -14,7 +13,6 @@ A num-variable can be initialized using the "num"-keyword. Nums can then be used
 
 A str-variable can be initialized using the "str"-keyword. Like nums, str-variables can also be added together.
 
-**Example:**
 ```text
 >>> str x = ab
 >>> str y = cd
@@ -23,22 +21,31 @@ abcd
 ```
 ## Printing:
 
-Printing can be done using the "print"-keyword.
+**Printing variables:**
 
-**Example:**
+Printing variables can be done using the "print"-keyword.
+
 ```text
->>> print hello world!
-hello world!
 >>> str car = audi
 >>> print car
 audi
 ```
 
+**Printing plain text:**
+
+Printing plain text can be done by ending the body with "//".
+
+```text
+>>> print car//
+car
+```
+
+
+
 ## When:
 
 "When" checks if a condition is fulfilled before performing an action.
 
-**Example:**
 ```text
 >>> str name = harry
 >>> when (age = harry) { print welcome }
