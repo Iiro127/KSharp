@@ -23,7 +23,7 @@ abcd
 
 **Printing variables:**
 
-Printing variables can be done using the "print"-keyword.
+Printing can be done using the "print"-keyword. When printing variables, write the name of the variable.
 
 ```text
 >>> str car = audi
