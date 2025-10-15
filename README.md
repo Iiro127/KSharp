@@ -48,7 +48,7 @@ car
 
 ```text
 >>> str name = harry
->>> when (age = harry) { print welcome }
+>>> when (name = harry) { print welcome }
 welcome
 ```
 
