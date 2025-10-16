@@ -9,12 +9,16 @@ public class VarResource {
 
 
     /**
-     * Checks if a name is valid (no spaces or special characters).
+     * Checks if a name is valid. Current criteria:
+     *      - No spaces
+     *      - No special characters
+     *      - No reserved words
+     *      - Is not empty
      *
      * @param name
      * @return
      */
     public boolean isValidName(String name){
-        return !name.contains(" ") && name.matches("[a-zA-Z0-9]*") && !reservedWords.contains(name) && name.isEmpty();
+        return !name.contains(" ") && name.matches("[a-zA-Z0-9]*") && !reservedWords.contains(name) && !name.isEmpty();
     }
 }

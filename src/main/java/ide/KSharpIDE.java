@@ -1,4 +1,4 @@
-package ksharp.ide;
+package ide;
 
 import org.example.InputReader;
 
