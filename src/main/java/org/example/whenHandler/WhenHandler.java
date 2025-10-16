@@ -19,10 +19,10 @@ public class WhenHandler {
      *
      * @param input
      */
-    public void handleWhen(String input){
+    public String handleWhen(String input){
         line = input;
         String condition = whenResource.parseCondition(line);
-        handleCondition(condition);
+        return handleCondition(condition);
     }
 
     /**
@@ -30,7 +30,7 @@ public class WhenHandler {
      *
      * @param condition
      */
-    private void handleCondition(String condition){
+    private String handleCondition(String condition){
         if (condition.contains("=")){
             String[] parts = condition.split("=");
             String var = parts[0].trim();
@@ -48,18 +48,19 @@ public class WhenHandler {
                 int expected = conditionInt.get(var);
 
                 if (stored == expected){
-                    inputReader.readInput(whenResource.parseBody(line));
+                    return inputReader.readInput(whenResource.parseBody(line));
                 }
             } else if (strings.containsKey(var)) {
                 String stored = strings.get(var);
                 String expected = conditionStr.get(var);
 
                 if (stored.equals(expected)){
-                    inputReader.readInput(whenResource.parseBody(line));
+                    return inputReader.readInput(whenResource.parseBody(line));
                 }
             } else {
-                System.out.println("false");
+                return null;
             }
         }
+        return null;
     }
 }
