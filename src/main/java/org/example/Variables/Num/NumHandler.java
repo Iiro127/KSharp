@@ -1,11 +1,14 @@
 package org.example.Variables.Num;
 
+import org.example.Variables.VarResource;
+
 import static org.example.App.errorReset;
 import static org.example.App.errorText;
 import static org.example.InputReader.integers;
 
 public class NumHandler {
     private static final MathHandler mathHandler = new MathHandler();
+    private static final VarResource varResource = new VarResource();
 
     /**
      * Handles num-variables.
@@ -17,7 +20,7 @@ public class NumHandler {
             String[] parts = line.split("=");
             String name = parts[0].replace("num", "").trim();
 
-            if (name.contains(" ")){
+            if (!varResource.isValidName(name)){
                 System.out.println(errorText + "Error at \"" + line + "\": Not a valid name." + errorReset);
             } else {
                 Integer value = Integer.parseInt(parts[1].replace("=", "").trim());
