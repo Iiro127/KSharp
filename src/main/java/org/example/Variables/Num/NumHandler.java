@@ -12,7 +12,7 @@ public class NumHandler {
             String name = parts[0].replace("num", "").trim();
 
             if (name.contains(" ")){
-                System.out.println(errorText + "Error at \"" + line + "\": Cannot include spaces in variable names." + errorReset);
+                System.out.println(errorText + "Error at \"" + line + "\": Not a valid name." + errorReset);
             } else {
                 Integer value = Integer.parseInt(parts[1].replace("=", "").trim());
                 integers.put(name, value);

@@ -30,7 +30,6 @@ public class App
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot define num as str-value." + errorReset);
             } catch (NullPointerException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot reference a non-existent variable." + errorReset);
-
             }
         }
     }

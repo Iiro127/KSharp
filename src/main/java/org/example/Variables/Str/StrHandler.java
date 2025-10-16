@@ -1,17 +1,21 @@
 package org.example.Variables.Str;
 
+import org.example.Variables.VarResource;
+
 import static org.example.App.errorReset;
 import static org.example.App.errorText;
 import static org.example.InputReader.strings;
 
 public class StrHandler {
+    private static final VarResource varResource = new VarResource();
     public void handleStr(String line){
         if (line.contains("=")){
             String[] parts = line.split("=");
             String name = parts[0].replace("str", "").trim();
             String value = parts[1].replace("=", "").trim();
-            if (name.contains(" ")){
-                System.out.println(errorText + "Error at \"" + line + "\": Cannot include spaces in variable names." + errorReset);
+
+            if (!varResource.isValidName(name)){
+                System.out.println(errorText + "Error at \"" + line + "\": Not a valid name." + errorReset);
             } else {
                 strings.put(name, value);
             }
