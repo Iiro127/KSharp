@@ -15,6 +15,7 @@ public class VarResource {
      * @return
      */
     public boolean isValidName(String name){
-        return !name.contains(" ") && name.matches("[a-zA-Z0-9]*") && !reservedWords.contains(name) && name.isEmpty();
+        System.out.println(name);
+        return !name.contains(" ") && name.matches("[a-zA-Z0-9]*") && !reservedWords.contains(name) && !name.isEmpty();
     }
 }
