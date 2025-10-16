@@ -49,7 +49,6 @@ public class InputReader {
         StringBuilder output = new StringBuilder();
 
         for (String line : parseLines(input)) {
-            System.out.println(line);
             try {
                 String result = switch (line) {
                     case String s when s.startsWith("num") -> numHandler.handleNum(s);
