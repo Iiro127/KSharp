@@ -8,6 +8,12 @@ import static org.example.InputReader.strings;
 
 public class StrHandler {
     private static final VarResource varResource = new VarResource();
+
+    /**
+     * Handles str-variables
+     *
+     * @param line
+     */
     public void handleStr(String line){
         if (line.contains("=")){
             String[] parts = line.split("=");

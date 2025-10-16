@@ -4,6 +4,12 @@ import static org.example.InputReader.integers;
 import static org.example.InputReader.strings;
 
 public class PrintHandler {
+
+    /**
+     * Handles all printing.
+     *
+     * @param line
+     */
     public void handlePrint(String line){
         String expr = line.replace("print", "").trim();
 
@@ -14,6 +20,11 @@ public class PrintHandler {
         }
     }
 
+    /**
+     * Gets a referenced variable.
+     *
+     * @param expr
+     */
     private void getVariable(String expr){
         if (integers.containsKey(expr)){
             System.out.println(integers.get(expr));
