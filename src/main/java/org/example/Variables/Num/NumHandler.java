@@ -2,8 +2,6 @@ package org.example.Variables.Num;
 
 import org.example.Variables.VarResource;
 
-import static org.example.KSharpConsole.errorReset;
-import static org.example.KSharpConsole.errorText;
 import static org.example.InputReader.integers;
 
 public class NumHandler {
@@ -21,7 +19,7 @@ public class NumHandler {
             String name = parts[0].replace("num", "").trim();
 
             if (!varResource.isValidName(name)){
-                return errorText + "Error at \"" + line + "\": Not a valid name." + errorReset;
+                return "Error at \"" + line + "\": Not a valid name.";
             } else {
                 Integer value = Integer.parseInt(parts[1].replace("=", "").trim());
                 integers.put(name, value);

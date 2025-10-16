@@ -16,9 +16,9 @@ public class MathHandler {
 
         if (integers.containsKey(num1) && integers.containsKey(num2)){
             return integers.get(num1) + integers.get(num2);
+        } else {
+            throw new NullPointerException();
         }
-
-        return 0;
     }
 
     /**

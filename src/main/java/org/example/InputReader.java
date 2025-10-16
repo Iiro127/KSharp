@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.example.KSharpConsole.errorReset;
-import static org.example.KSharpConsole.errorText;
-
 public class InputReader {
     public static Map<String, String> strings = new HashMap<>();
     public static Map<String, Integer> integers = new HashMap<>();
@@ -63,15 +60,17 @@ public class InputReader {
                 }
 
             } catch (NumberFormatException e) {
-                output.append(errorText)
-                        .append("Error at \"").append(line)
+                output.append("Error at \"")
+                        .append(line)
                         .append("\": Cannot define num as str-value.")
-                        .append(errorReset).append("\n");
+                        .append("\n");
+                break;
             } catch (NullPointerException e) {
-                output.append(errorText)
-                        .append("Error at \"").append(line)
+                output.append("Error at \"")
+                        .append(line)
                         .append("\": Cannot reference a non-existent variable.")
-                        .append(errorReset).append("\n");
+                        .append("\n");
+                break;
             }
         }
 

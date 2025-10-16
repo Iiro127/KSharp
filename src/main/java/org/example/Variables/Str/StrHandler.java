@@ -2,8 +2,6 @@ package org.example.Variables.Str;
 
 import org.example.Variables.VarResource;
 
-import static org.example.KSharpConsole.errorReset;
-import static org.example.KSharpConsole.errorText;
 import static org.example.InputReader.strings;
 
 public class StrHandler {
@@ -21,7 +19,7 @@ public class StrHandler {
             String value = parts[1].replace("=", "").trim();
 
             if (!varResource.isValidName(name)){
-                return errorText + "Error at \"" + line + "\": Not a valid name." + errorReset;
+                return "Error at \"" + line + "\": Not a valid name.";
             } else {
                 strings.put(name, value);
             }
