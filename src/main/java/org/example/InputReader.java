@@ -14,6 +14,12 @@ public class InputReader {
     private static final StrHandler strHandler = new StrHandler();
     private static final PrintHandler printHandler = new PrintHandler();
     private static final WhenHandler whenHandler = new WhenHandler();
+
+    /**
+     * Reads console input.
+     *
+     * @param line
+     */
     public void readInput(String line){
         switch (line) {
             case String s when s.startsWith("num") -> numHandler.handleNum(s);

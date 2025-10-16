@@ -14,11 +14,22 @@ public class WhenHandler {
     private static final WhenResource whenResource = new WhenResource();
     private static String line;
 
+    /**
+     * Handles when-statement.
+     *
+     * @param input
+     */
     public void handleWhen(String input){
         line = input;
         String condition = whenResource.parseCondition(line);
         handleCondition(condition);
     }
+
+    /**
+     * Handles when-condition.
+     *
+     * @param condition
+     */
     private void handleCondition(String condition){
         if (condition.contains("=")){
             String[] parts = condition.split("=");

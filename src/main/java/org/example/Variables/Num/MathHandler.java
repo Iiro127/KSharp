@@ -3,6 +3,12 @@ package org.example.Variables.Num;
 import static org.example.InputReader.integers;
 
 public class MathHandler {
+
+    /**
+     * Handles addition between two num-variables.
+     *
+     * @param line
+     */
     public void addition(String line){
         String[] parts = line.split("\\+");
         String num1 = parts[0].replace("num", "").trim();
@@ -13,6 +19,11 @@ public class MathHandler {
         }
     }
 
+    /**
+     * Handles subtraction between two num-variables.
+     *
+     * @param line
+     */
     public void subtraction(String line) {
         String[] parts = line.split("\\-");
         String num1 = parts[0].replace("num", "").trim();

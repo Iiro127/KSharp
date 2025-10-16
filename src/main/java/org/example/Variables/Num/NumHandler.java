@@ -6,6 +6,12 @@ import static org.example.InputReader.integers;
 
 public class NumHandler {
     private static final MathHandler mathHandler = new MathHandler();
+
+    /**
+     * Handles num-variables.
+     *
+     * @param line
+     */
     public void handleNum(String line){
         if (line.contains("=")){
             String[] parts = line.split("=");
