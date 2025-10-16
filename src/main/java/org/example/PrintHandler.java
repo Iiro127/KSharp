@@ -10,13 +10,13 @@ public class PrintHandler {
      *
      * @param line
      */
-    public void handlePrint(String line){
+    public String handlePrint(String line){
         String expr = line.replace("print", "").trim();
 
         if (expr.contains("//")){
-            System.out.println(expr.replace("//", ""));
+            return expr.replace("//", "");
         } else {
-            getVariable(expr);
+            return getVariable(expr);
         }
     }
 
@@ -25,11 +25,11 @@ public class PrintHandler {
      *
      * @param expr
      */
-    private void getVariable(String expr){
+    private String getVariable(String expr){
         if (integers.containsKey(expr)){
-            System.out.println(integers.get(expr));
+            return integers.get(expr).toString();
         } else if (strings.containsKey(expr)) {
-            System.out.println(strings.get(expr));
+            return strings.get(expr);
         } else {
             throw new NullPointerException();
         }

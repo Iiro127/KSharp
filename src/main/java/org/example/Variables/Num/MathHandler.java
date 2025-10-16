@@ -9,14 +9,16 @@ public class MathHandler {
      *
      * @param line
      */
-    public void addition(String line){
+    public Integer addition(String line){
         String[] parts = line.split("\\+");
         String num1 = parts[0].replace("num", "").trim();
         String num2 = parts[1].trim();
 
         if (integers.containsKey(num1) && integers.containsKey(num2)){
-            System.out.println(integers.get(num1) + integers.get(num2));
+            return integers.get(num1) + integers.get(num2);
         }
+
+        return 0;
     }
 
     /**
@@ -24,11 +26,11 @@ public class MathHandler {
      *
      * @param line
      */
-    public void subtraction(String line) {
+    public Integer subtraction(String line) {
         String[] parts = line.split("\\-");
         String num1 = parts[0].replace("num", "").trim();
         String num2 = parts[1].trim();
 
-        System.out.println(integers.get(num1) - integers.get(num2));
+        return integers.get(num1) - integers.get(num2);
     }
 }

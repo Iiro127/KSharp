@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class App 
+public class KSharpConsole
 {
     private static final InputReader inputReader = new InputReader();
     public static final String errorText = "\u001B[31m";
@@ -25,7 +25,7 @@ public class App
 
             //TODO: Add more runtime error handling when needed.
             try {
-                inputReader.readInput(line);
+                System.out.println(inputReader.readInput(line));
             } catch (NumberFormatException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot define num as str-value." + errorReset);
             } catch (NullPointerException e){
