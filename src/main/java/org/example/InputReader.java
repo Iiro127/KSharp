@@ -21,6 +21,6 @@ public class InputReader {
             case String s when s.startsWith("print") -> printHandler.handlePrint(s);
             case String s when s.startsWith("when") -> whenHandler.handleWhen(s);
             default -> System.out.println("Unknown command: " + line);
-        };
+        }
     }
 }

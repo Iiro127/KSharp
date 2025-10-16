@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App 
 {
     private static final InputReader inputReader = new InputReader();
-    private static final String errorText = "\u001B[31m";
+    public static final String errorText = "\u001B[31m";
     public static final String errorReset = "\u001B[0m";
 
 
@@ -23,14 +23,13 @@ public class App
                 break;
             }
 
-            //TODO: Add more error handling when needed.
+            //TODO: Add more runtime error handling when needed.
             try {
                 inputReader.readInput(line);
             } catch (NumberFormatException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot define num as str-value." + errorReset);
             } catch (NullPointerException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot reference a non-existent variable." + errorReset);
-
             }
         }
     }

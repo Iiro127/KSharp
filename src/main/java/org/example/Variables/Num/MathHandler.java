@@ -18,8 +18,6 @@ public class MathHandler {
         String num1 = parts[0].replace("num", "").trim();
         String num2 = parts[1].trim();
 
-        if (integers.containsKey(num1) && integers.containsKey(num2)){
-            System.out.println(integers.get(num1) - integers.get(num2));
-        }
+        System.out.println(integers.get(num1) - integers.get(num2));
     }
 }
