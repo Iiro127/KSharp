@@ -9,7 +9,11 @@ public class VarResource {
 
 
     /**
-     * Checks if a name is valid (no spaces or special characters).
+     * Checks if a name is valid. Current criteria:
+     *      - No spaces
+     *      - No special characters
+     *      - No reserved words
+     *      - Is not empty
      *
      * @param name
      * @return
