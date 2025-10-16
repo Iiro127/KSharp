@@ -1,5 +1,5 @@
 # K#
-K# is a programming language built on top of Java. It features it's own syntax, and it is usable on console and it's own IDE. All code examples are executed on console, but are applicable on the K# IDE.
+K# is a programming language built on top of Java. It features its own syntax, and it is usable on console and it' own IDE. All code examples are executed on console, but are applicable in the K# IDE.
 
 ## Num:
 
