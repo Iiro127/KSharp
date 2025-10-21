@@ -1,11 +1,12 @@
 package org.example.Compiler;
 
+import org.example.InputReader;
+
 import java.io.IOException;
 
 public class Compiler {
-
-    private static final ByteCodeEmitter emitter = new ByteCodeEmitter();
-    public static void main(String[ ] args) {
-        emitter.emitPrint("print hello//");
+    private static final InputReader inputReader = new InputReader();
+    public static void main(String[ ] args) throws IOException {
+        inputReader.readInput("print hello world//;");
     }
 }

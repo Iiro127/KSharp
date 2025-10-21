@@ -18,7 +18,6 @@ public class InputReader {
     private static final StrHandler strHandler = new StrHandler();
     private static final PrintHandler printHandler = new PrintHandler();
     private static final WhenHandler whenHandler = new WhenHandler();
-    private static final PrintEmitter printEmitter = new PrintEmitter();
     private static final ByteCodeEmitter byteCodeEmitter = new ByteCodeEmitter();
 
     public ArrayList<String> parseLines(String input) {
@@ -57,7 +56,7 @@ public class InputReader {
                 default -> System.out.println("Unknown command: " + line);
             }
 
-            byteCodeEmitter.finishClass("KSharp.class");
+            byteCodeEmitter.createClass("src/main/java/KSharp.class");
         }
     }
 }
