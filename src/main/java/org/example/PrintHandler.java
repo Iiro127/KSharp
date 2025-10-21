@@ -2,7 +2,7 @@ package org.example;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.GETSTATIC;
 import static jdk.internal.org.objectweb.asm.Opcodes.INVOKEVIRTUAL;
-import static org.example.Compiler.ByteCodeEmitter.mv;
+import static org.example.Compiler.ByteCodeResource.mv;
 import static org.example.InputReader.integers;
 import static org.example.InputReader.strings;
 

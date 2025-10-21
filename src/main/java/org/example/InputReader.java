@@ -1,7 +1,6 @@
 package org.example;
 
-import org.example.Compiler.ByteCodeEmitter;
-import org.example.Compiler.PrintEmitter;
+import org.example.Compiler.ByteCodeResource;
 import org.example.Variables.Num.NumHandler;
 import org.example.Variables.Str.StrHandler;
 import org.example.whenHandler.WhenHandler;
@@ -18,7 +17,7 @@ public class InputReader {
     private static final StrHandler strHandler = new StrHandler();
     private static final PrintHandler printHandler = new PrintHandler();
     private static final WhenHandler whenHandler = new WhenHandler();
-    private static final ByteCodeEmitter byteCodeEmitter = new ByteCodeEmitter();
+    private static final ByteCodeResource byteCodeResource = new ByteCodeResource();
 
     public ArrayList<String> parseLines(String input) {
         ArrayList<String> lines = new ArrayList<>();
@@ -56,7 +55,7 @@ public class InputReader {
                 default -> System.out.println("Unknown command: " + line);
             }
 
-            byteCodeEmitter.createClass("src/main/java/KSharp.class");
+            byteCodeResource.createClass("src/main/java/KSharp.class");
         }
     }
 }

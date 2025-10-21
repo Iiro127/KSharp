@@ -9,11 +9,11 @@ import java.nio.file.Path;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 
-public class ByteCodeEmitter {
+public class ByteCodeResource {
     private final ClassWriter cw;
     public static MethodVisitor mv = null;
 
-    public ByteCodeEmitter() {
+    public ByteCodeResource() {
         cw = new ClassWriter(0);
         cw.visit(V17, ACC_PUBLIC, "KSharp", null, "java/lang/Object", null);
 
