@@ -1,5 +1,8 @@
 package org.example;
 
+import static jdk.internal.org.objectweb.asm.Opcodes.GETSTATIC;
+import static jdk.internal.org.objectweb.asm.Opcodes.INVOKEVIRTUAL;
+import static org.example.Compiler.ByteCodeEmitter.mv;
 import static org.example.InputReader.integers;
 import static org.example.InputReader.strings;
 
@@ -10,14 +13,23 @@ public class PrintHandler {
      *
      * @param line
      */
-    public String handlePrint(String line){
+    public void handlePrint(String line){
         String expr = line.replace("print", "").trim();
 
         if (expr.contains("//")){
-            return expr.replace("//", "");
+            emitPrint(expr.replace("//", ""));
         } else {
-            return getVariable(expr);
+            emitPrint(getVariable(expr));
         }
+    }
+
+    public void emitPrint(String line) {
+        String expr = line.replace("print", "").replace("//", "").trim();
+
+        mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
+        mv.visitLdcInsn(expr);
+        mv.visitMethodInsn(INVOKEVIRTUAL,
+                "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
     }
 
     /**

@@ -52,7 +52,7 @@ public class InputReader {
             switch (line) {
                 case String s when s.startsWith("num") -> numHandler.handleNum(s);
                 case String s when s.startsWith("str") -> strHandler.handleStr(s);
-                case String s when s.startsWith("print") -> printEmitter.emitPrint(s);//printHandler.handlePrint(s);
+                case String s when s.startsWith("print") -> printHandler.handlePrint(s);
                 case String s when s.startsWith("when") -> whenHandler.handleWhen(s);
                 default -> System.out.println("Unknown command: " + line);
             }
