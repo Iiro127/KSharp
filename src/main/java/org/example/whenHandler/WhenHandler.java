@@ -2,6 +2,7 @@ package org.example.whenHandler;
 
 import org.example.InputReader;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +20,10 @@ public class WhenHandler {
      *
      * @param input
      */
-    public String handleWhen(String input){
+    public void handleWhen(String input) throws IOException {
         line = input;
         String condition = whenResource.parseCondition(line);
-        return handleCondition(condition);
+        handleCondition(condition);
     }
 
     /**
@@ -30,7 +31,7 @@ public class WhenHandler {
      *
      * @param condition
      */
-    private String handleCondition(String condition){
+    private void handleCondition(String condition) throws IOException {
         if (condition.contains("=")){
             String[] parts = condition.split("=");
             String var = parts[0].trim();
@@ -48,19 +49,16 @@ public class WhenHandler {
                 int expected = conditionInt.get(var);
 
                 if (stored == expected){
-                    return inputReader.readInput(whenResource.parseBody(line));
+                    inputReader.readInput(whenResource.parseBody(line));
                 }
             } else if (strings.containsKey(var)) {
                 String stored = strings.get(var);
                 String expected = conditionStr.get(var);
 
                 if (stored.equals(expected)){
-                    return inputReader.readInput(whenResource.parseBody(line));
+                    inputReader.readInput(whenResource.parseBody(line));
                 }
-            } else {
-                return null;
             }
         }
-        return null;
     }
 }

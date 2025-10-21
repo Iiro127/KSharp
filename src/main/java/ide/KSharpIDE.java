@@ -26,7 +26,7 @@ public class KSharpIDE {
             JButton runButton = new JButton("Run");
             runButton.addActionListener(e -> {
                 String code = editor.getText();
-                console.setText(inputReader.readInput(code));
+                //console.setText(inputReader.readInput(code));
             });
 
             frame.add(splitPane, BorderLayout.CENTER);

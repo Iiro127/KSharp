@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class KSharpConsole
@@ -25,11 +26,13 @@ public class KSharpConsole
 
             //TODO: Add more runtime error handling when needed.
             try {
-                System.out.println(inputReader.readInput(line));
+                inputReader.readInput(line);
             } catch (NumberFormatException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot define num as str-value." + errorReset);
             } catch (NullPointerException e){
                 System.out.println(errorText + "Error at \"" + line + "\": Cannot reference a non-existent variable." + errorReset);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
